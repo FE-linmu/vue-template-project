@@ -1,6 +1,6 @@
-export const home = [
+const home = [
   {
-    path: '/homeDemo1',
+    path: '/',
     name: 'homeDemo1',
     // 路由懒加载
     component: () => import('../views/home/HomeDemo1.vue')
@@ -11,3 +11,4 @@ export const home = [
     component: () => import('../views/home/HomeDemo2.vue')
   }
 ]
+export default home

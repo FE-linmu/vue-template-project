@@ -1,4 +1,4 @@
-export const my = [
+const my = [
   {
     path: '/myDemo1',
     name: 'myDemo1',
@@ -11,3 +11,4 @@ export const my = [
     component: () => import('../views/my/MyDemo2.vue')
   }
 ]
+export default my

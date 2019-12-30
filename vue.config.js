@@ -6,18 +6,20 @@ const BASE_URL = process.env.NODE_ENV === 'production' ? '/pro/' : '/'
 
 module.exports = {
   lintOnSave: false,
-  baseUrl: BASE_URL,
+  publicPath: BASE_URL,
   chainWebpack: config => {
     config.resolve.alias
       .set('@', resolve('src'))
-      .set('_c', resolve('src/components'))
-      .set('_v', resolve('src/views'))
-      .set('_a', resolve('src/assets'))
-      .set('_r', resolve('src/router'))
-      .set('_s', resolve('src/store'))
+      .set('components', resolve('src/components'))
+      .set('views', resolve('src/views'))
+      .set('assets', resolve('src/assets'))
+      .set('router', resolve('src/router'))
+      .set('store', resolve('src/store'))
+      .set('config', resolve('src/config'))
+      .set('service', resolve('src/service'))
   },
   productionSourceMap: false, // 打包时不生成.map文件
   devServer: {
-    proxy: 'http://localhost:8080'
+    proxy: 'http://localhost:1230'
   }
 }
