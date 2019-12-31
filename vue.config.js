@@ -17,6 +17,7 @@ module.exports = {
       .set('store', resolve('src/store'))
       .set('config', resolve('src/config'))
       .set('service', resolve('src/service'))
+      .set('plugins', resolve('src/plugins'))
   },
   productionSourceMap: false, // 打包时不生成.map文件
   devServer: {

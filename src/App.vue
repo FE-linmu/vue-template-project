@@ -7,7 +7,29 @@
     <router-view />
   </div>
 </template>
+<script>
+export default {
+  name: 'App',
+  data () {
+    return {}
+  },
+  components: {
 
+  },
+  computed: {
+
+  },
+  watch: {
+
+  },
+  created () {
+
+  },
+  mounted () {
+
+  }
+}
+</script>
 <style lang="less">
 #app {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
