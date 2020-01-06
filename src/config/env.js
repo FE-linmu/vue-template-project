@@ -1,9 +1,9 @@
 let env = '' // 环境
-if (process.env.NODE_ENV === 'development') {
+if (process.env.VUE_APP_CURRENTMODE === 'development') {
   env = 'DEV'
-} else if (process.env.NODE_ENV === 'production') {
+} else if (process.env.VUE_APP_CURRENTMODE === 'production') {
   env = 'PRO'
-} else if (process.env.NODE_ENV === 'mtestEnvironment') {
+} else if (process.env.VUE_APP_CURRENTMODE === 'test') {
   env = 'TEST'
 }
 

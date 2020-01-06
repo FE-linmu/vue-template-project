@@ -1,40 +1,69 @@
 <template>
   <div class="box">
-    <h4>homeDemo1</h4>
-    <hr />
-    <div @click="getVuexState()">获取state</div>
-    <div @click="commitVuexState()">提交mutation</div>
+    <home-header title="home标题">
+      <p>这是slot</p>
+    </home-header>
+    <div class="demo"
+         @click="handleState">使用state</div>
+    <div class="demo"
+         @click="handleGetter">使用getters</div>
+    <div class="demo"
+         @click="handleActions">使用actions</div>
+    <div class="demo"
+         @click="handleMutations(1)">使用mutations</div>
   </div>
 </template>
 
 <script>
 import { mapState, mapGetters, mapMutations, mapActions } from 'vuex'
+import { Dialog } from 'vant'
+import homeMixin from 'components/common/home.js'
+import HomeHeader from 'components/home/header'
 export default {
   name: 'homeDemo1',
+  mixins: [homeMixin],
+  components: {
+    HomeHeader
+  },
   computed: {
     // 使用对象展开运算符将此对象混入到外部对象中
     ...mapState('home', {
       // 箭头函数可使代码更简练
-      home1: state => state.home.home1
+      home1State: state => state.home1
     }),
-    // 使用对象展开运算符将 getter 混入 computed 对象中
-    ...mapGetters('home', [
-      'home/home1'
-      // ...
-    ])
+    ...mapGetters('home', {
+      home1Getter: 'home1'
+    })
+  },
+  created () {
+    console.log('test-vconsole')
+    Dialog.alert({
+      title: '在使用的mixin是',
+      message: this.homeMixin
+    })
   },
   methods: {
     ...mapActions('home', {
-      // add: 'home/increment' // 将 `this.add()` 映射为 `this.$store.dispatch('increment')`
+      handleActions: 'getExample'
     }),
     ...mapMutations('home', {
-      // add: 'home/increment' // 将 `this.add()` 映射为 `this.$store.commit('increment')`
+      handleMutations: 'handleMutations'
     }),
-    commitVuexState () {
-      this.$store.commit('mExample', 'hello vuex') // 同步提交一个state
+    handleState () {
+      Dialog.alert({
+        title: '获取state',
+        message: 'home1：' + this.home1
+      }).then(() => {
+        // on close
+      })
     },
-    getVuexState () {
-      console.log(this.storeExample) // 打印vuex中获取的值
+    handleGetter () {
+      Dialog.alert({
+        title: '获取getters',
+        message: 'home1：' + this.home1Getter
+      }).then(() => {
+        // on close
+      })
     }
   }
 }
@@ -42,7 +71,10 @@ export default {
 
 <style lang="less" scoped>
 .box {
-  div {
+  position: relative;
+  padding-top: 1.75rem;
+  .demo {
+    color: @mainColor;
     display: inline-block;
     width: 150px;
     height: 50px;

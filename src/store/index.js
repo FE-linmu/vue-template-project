@@ -1,8 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import home from './home'
-import my from './my'
-import createLogger from 'plugins/logger'
+import home from './modules/home'
+import my from './modules/my'
 Vue.use(Vuex)
 
 const debug = process.env.NODE_ENV !== 'production'
@@ -12,6 +11,5 @@ export default new Vuex.Store({
     my,
     home
   },
-  strict: debug,
-  plugins: debug ? [createLogger()] : []
+  strict: debug
 })

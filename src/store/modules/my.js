@@ -1,6 +1,6 @@
 // initial state
 const state = {
-  all: []
+  my1: 'test-my1'
 }
 
 // getters

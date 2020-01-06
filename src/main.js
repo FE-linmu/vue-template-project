@@ -6,9 +6,11 @@ import { env } from 'config/env'
 import 'assets/css/base.less'
 import 'assets/css/cover.less'
 import VConsole from 'vconsole'
-import { Button } from 'vant'
-Vue.use(Button)
-
+import { Dialog, Toast } from 'vant'
+import FastClick from 'fastclick'
+FastClick.attach(document.body)
+Vue.use(Dialog)
+Vue.use(Toast)
 Vue.config.productionTip = false
 
 if (env === 'TEST') {
