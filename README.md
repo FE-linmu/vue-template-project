@@ -1,24 +1,21 @@
-# vue-webapp-template
+> 项目相关备注
 
-## Project setup
-```
-npm install
-```
+- 相关人员 `有多人情况下全部列出`
+  + 业务分析师:
+  + 前端开发人员:
+  + 后台开发人员:
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+- 环境地址 `有更多环境依次补全, 以下详情有则补充`
+  * 测试环境
+    + 测试环境页面访问地址:
+    + 测试环境接口地址:
+    + 测试环境部署方式:
 
-### Compiles and minifies for production
-```
-npm run build
-```
+  * 生产环境
+    + 生产环境页面访问地址:
+    + 生产环境接口地址:
+    + 生产环境部署方式:
 
-### Lints and fixes files
-```
-npm run lint
-```
+- 补充说明:
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+- 迭代说明：
