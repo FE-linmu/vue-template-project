@@ -5,7 +5,7 @@ import axios from 'axios'
  * @param options
  */
 export const getExample = options => {
-  return axios.get('./mock/home1.json', { params: options })
+  return axios.get('/test/get', { params: options })
 }
 
 /**
@@ -14,5 +14,5 @@ export const getExample = options => {
  * @returns {*}
  */
 export const postExample = options => {
-  return axios.post('./mock/home2.json', options)
+  return axios.post('/test/post', options)
 }

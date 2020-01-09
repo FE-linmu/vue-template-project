@@ -2,7 +2,7 @@
   <div id="app">
     <div id="nav">
       <router-link to="/">Home</router-link> |
-      <router-link to="/myDemo1">my</router-link>
+      <router-link to="/myDemo1">my（测试骨架屏）</router-link>
     </div>
     <router-view />
   </div>
