@@ -20,6 +20,8 @@
     "vuex": "^3.1.2"
   },
   "devDependencies": {
+    "@commitlint/cli": "^8.3.5",
+    "@commitlint/config-conventional": "^8.3.4",
     "@vue/cli-plugin-babel": "^4.1.0",
     "@vue/cli-plugin-eslint": "^4.1.0",
     "@vue/cli-plugin-router": "^4.1.0",
@@ -39,6 +41,7 @@
     "eslint-plugin-standard": "^4.0.1",
     "eslint-plugin-vue": "^6.2.2",
     "html-webpack-plugin": "^4.0.0",
+    "husky": "^4.2.5",
     "less": "^3.0.4",
     "less-loader": "^5.0.0",
     "mockjs": "^1.1.0",
@@ -51,6 +54,11 @@
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-customizable"
+    }
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
   }
 }
