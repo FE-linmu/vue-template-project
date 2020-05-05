@@ -8,9 +8,8 @@ const state = {
 
 // getters
 const getters = {
-  home1 (state) {
-    state.home1 = 'vuex使用getters修改后的state'
-    return state.home1
+  home3 (state) {
+    return 'test--home3'
   }
 }
 

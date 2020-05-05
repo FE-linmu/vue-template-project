@@ -36,7 +36,7 @@ module.exports = {
       .set('store', resolve('src/store'))
       .set('config', resolve('src/config'))
       .set('service', resolve('src/service'))
-      .set('plugins', resolve('src/plugins'))
+      .set('plugin', resolve('src/plugins'))
   },
   configureWebpack: (config) => {
     if (process.env.NODE_ENV === 'production') {

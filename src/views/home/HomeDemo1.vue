@@ -32,7 +32,7 @@ export default {
       home1State: state => state.home1
     }),
     ...mapGetters('home', {
-      home1Getter: 'home1'
+      home3Getter: 'home3'
     })
   },
   created () {
@@ -53,17 +53,19 @@ export default {
       Dialog.alert({
         title: '获取state',
         message: 'home1：' + this.home1
-      }).then(() => {
-        // on close
       })
+        .then(() => {
+          // on close
+        })
     },
     handleGetter () {
       Dialog.alert({
         title: '获取getters',
-        message: 'home1：' + this.home1Getter
-      }).then(() => {
-        // on close
+        message: 'home3：' + this.home3Getter
       })
+        .then(() => {
+          // on close
+        })
     }
   }
 }
