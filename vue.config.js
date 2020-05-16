@@ -28,15 +28,6 @@ module.exports = {
     // 修改文件的快捷方式
     config.resolve.alias
       .set('@', resolve('src'))
-      .set('public', resolve('public'))
-      .set('components', resolve('src/components'))
-      .set('views', resolve('src/views'))
-      .set('assets', resolve('src/assets'))
-      .set('router', resolve('src/router'))
-      .set('store', resolve('src/store'))
-      .set('config', resolve('src/config'))
-      .set('service', resolve('src/service'))
-      .set('plugin', resolve('src/plugins'))
   },
   configureWebpack: (config) => {
     if (process.env.NODE_ENV === 'production') {
