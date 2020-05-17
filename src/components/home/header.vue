@@ -13,6 +13,12 @@ export default {
       required: false,
       default: '这是标题'
     }
+  },
+  beforeDestroy () {
+    console.log('子beforedestory')
+  },
+  destroyed () {
+    console.log('子destory')
   }
 }
 </script>

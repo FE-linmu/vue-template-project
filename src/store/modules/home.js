@@ -1,4 +1,4 @@
-import { getExample } from 'service/homeApi.js'
+import { getExample } from '@/service/homeApi.js'
 import { Dialog } from 'vant'
 // initial state
 const state = {

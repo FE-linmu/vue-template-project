@@ -17,8 +17,8 @@
 <script>
 import { mapState, mapGetters, mapMutations, mapActions } from 'vuex'
 import { Dialog } from 'vant'
-import homeMixin from 'components/common/home.js'
-import HomeHeader from 'components/home/header'
+import homeMixin from '@/components/common/home.js'
+import HomeHeader from '@/components/home/header'
 export default {
   name: 'homeDemo1',
   mixins: [homeMixin],
@@ -41,6 +41,12 @@ export default {
       title: '在使用的mixin是',
       message: this.homeMixin
     })
+  },
+  beforeDestroy () {
+    console.log('父beforedestory')
+  },
+  destroyed () {
+    console.log('父destory')
   },
   methods: {
     ...mapActions('home', {

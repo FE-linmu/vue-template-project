@@ -6,7 +6,11 @@
 </template>
 
 <script>
-export default {}
+export default {
+  created () {
+    console.log('homeDemo2')
+  }
+}
 </script>
 
 <style lang="less" scoped>
