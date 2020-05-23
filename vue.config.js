@@ -86,6 +86,9 @@ module.exports = {
     loaderOptions: {
       // css: {}, // 这里的选项会传递给 css-loader
       // postcss: {} // 这里的选项会传递给 postcss-loader
+      less: {
+        prependData: `@import "~@/assets/css/common.less";`
+      }
     }, // css预设器配置项 详见https://cli.vuejs.org/zh/config/#css-loaderoptions
     // 是否启用 CSS modules for all css / pre-processor files.
     modules: false
@@ -119,14 +122,14 @@ module.exports = {
     before: (app) => { }
   },
   // 第三方插件配置
-  pluginOptions: {
-    'style-resources-loader': {
-      'preProcessor': 'less',
-      'patterns': [
-        path.resolve(__dirname, './src/assets/css/common.less')
-      ]
-    }
-  }
+  // pluginOptions: {
+  //   'style-resources-loader': {
+  //     'preProcessor': 'less',
+  //     'patterns': [
+  //       path.resolve(__dirname, './src/assets/css/common.less')
+  //     ]
+  //   }
+  // }
 }
 // 使用 plugin 的方式引用公共 css 文件
 // function addStyleResource (rule) {
