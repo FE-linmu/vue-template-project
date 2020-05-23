@@ -9,7 +9,7 @@ module.exports = {
   // 部署应用包时的基本 URL,用法和 webpack 本身的 output.publicPath 一致
   publicPath: './',
   // 输出文件目录
-  outputDir: `./dist/${packageJson._version}`,
+  outputDir: `./dist/${packageJson.buildVersion}`,
   // eslint-loader 是否在保存的时候检查
   lintOnSave: true,
   // 是否使用包含运行时编译器的 Vue 构建版本
@@ -20,7 +20,7 @@ module.exports = {
   integrity: false,
   // webpack相关配置
   chainWebpack: (config) => {
-    // 移除 prefetch 插件
+    // 移除 prefetch 插件 当 prefetch 插件被禁用时，你可以通过 webpack 的内联注释手动选定要提前获取的代码区块： import(/* webpackPrefetch: true */ './someAsyncComponent.vue')
     config.plugins.delete('prefetch')
     // 自动化导入css文件
     const types = ['vue-modules', 'vue', 'normal-modules', 'normal']
@@ -58,7 +58,7 @@ module.exports = {
     open: true,
     host: 'localhost',
     port: 2013,
-    https: false,
+    https: true,
     hotOnly: true, // 启用热模块替换
     // http 代理配置
     proxy: {
@@ -77,7 +77,7 @@ module.exports = {
 
   }
 }
-
+// 使用 plugin 的方式引用公共 css 文件
 function addStyleResource (rule) {
   rule.use('style-resource')
     .loader('style-resources-loader')

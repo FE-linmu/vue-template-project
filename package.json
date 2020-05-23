@@ -1,13 +1,14 @@
 {
   "name": "vue-webapp-template",
   "version": "0.1.0",
-  "_version": "v1.0",
+  "buildVersion": "v4.0",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve --open --mode development",
+    "test": "vue-cli-service build --mode test --report",
     "build": "vue-cli-service build --mode production",
-    "test": "vue-cli-service build --mode test",
     "lint": "vue-cli-service lint",
+    "inspect": "vue-cli-service inspect",
     "version": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0 && git add CHANGELOG.md"
   },
   "dependencies": {

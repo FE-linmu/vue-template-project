@@ -13,7 +13,7 @@ const actions = {
   }
 }
 
-// mutations
+// mutations 方法
 const mutations = {
   setProducts (state, products) {
     state.all = products

@@ -2,7 +2,6 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import store from './store'
-import { env } from '@/config/env'
 import '@/assets/css/base.less'
 import '@/assets/css/cover.less'
 import VConsole from 'vconsole'
@@ -14,11 +13,11 @@ Vue.use(Toast)
 Vue.use(Skeleton)
 Vue.config.productionTip = false
 
-// if (env === 'DEV') {
-//   require('./mock') // 引入mock数据
-// }
+if (process.env.VUE_APP_CURRENTMODE === 'development') {
+  require('./mock') // 引入mock数据
+}
 
-if (env === 'TEST') {
+if (process.env.VUE_APP_CURRENTMODE === 'test') {
   const vConsole = new VConsole()
   console.log(vConsole.version)
 }
