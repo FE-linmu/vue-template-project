@@ -8,7 +8,7 @@ Vue.use(VueRouter)
 const routes = [...home, ...my]
 
 const router = new VueRouter({
-  mode: 'history',
+  mode: 'hash',
   base: process.env.BASE_URL,
   routes
 })
