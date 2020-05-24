@@ -18,7 +18,8 @@ module.exports = {
     { name: 'accounts' },
     { name: 'admin' },
     { name: 'exampleScope' },
-    { name: 'changeMe' }
+    { name: 'changeMe' },
+    { name: '' }
   ],
 
   // it needs to match the value for field type. Eg.: 'fix'
