@@ -2,8 +2,8 @@ const path = require('path')
 // 为什么不使用 uglifyjs==> https://www.cnblogs.com/XCWebLTE/p/10270629.html
 // const UglifyPlugin = require('uglifyjs-webpack-plugin')
 const TerserPlugin = require('terser-webpack-plugin') // 和 uglifyPlugin 功能差不多，vue-cli4 官方用的这个插件
-const CompressionPlugin = require("compression-webpack-plugin") // gzip 压缩
-const CleanWebpackplugin = require('clean-webpack-plugin')
+const CompressionPlugin = require('compression-webpack-plugin') // gzip 压缩
+// const d = require('clean-webpack-plugin')
 
 const resolve = dir => path.join(__dirname, dir)
 
@@ -21,7 +21,7 @@ module.exports = {
   // 输出文件目录
   outputDir: `./dist/${version}`,
   // 资源目录
-  assetsDir: "./",
+  assetsDir: './',
   // eslint-loader 是否在保存的时候检查
   lintOnSave: true,
   // 是否使用包含运行时编译器的 Vue 构建版本
@@ -51,9 +51,9 @@ module.exports = {
         config.plugins = [
           ...config.plugins,
           new CompressionPlugin({
-            test: /\.js$|\.html$|.\css/, //匹配文件名
-            threshold: 10240,//对超过10k的数据压缩
-            deleteOriginalAssets: false //不删除源文件
+            test: /\.js$|\.html$|.\css/, // 匹配文件名
+            threshold: 10240, // 对超过10k的数据压缩
+            deleteOriginalAssets: false // 不删除源文件
           })
         ]
       }
@@ -104,9 +104,9 @@ module.exports = {
           maxEntrypointSize: 50000000,
           // 生成文件的最大体积 300KB
           maxAssetSize: 3001024,
-          //只给出 js 文件的性能提示
+          // 只给出 js 文件的性能提示
           assetFilter: function (assetFilename) {
-            return assetFilename.endsWith('.js');
+            return assetFilename.endsWith('.js')
           }
         },
         output: {

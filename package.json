@@ -2,13 +2,12 @@
   "name": "vue-webapp-template",
   "version": "0.1.1",
   "private": true,
-  "openGzip": true,
   "scripts": {
     "serve": "vue-cli-service serve --open --mode development",
-    "test": "vue-cli-service build --mode test --report",
     "build": "vue-cli-service build --mode production",
     "lint": "vue-cli-service lint",
     "inspect": "vue-cli-service inspect > vue-cli4-webpack-default.js",
+    "test": "vue-cli-service build --mode test --report",
     "version": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0 && git add CHANGELOG.md"
   },
   "dependencies": {
@@ -57,5 +56,6 @@
     "commitizen": {
       "path": "node_modules/cz-customizable"
     }
-  }
+  },
+  "openGzip": true
 }
