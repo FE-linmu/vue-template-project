@@ -3,6 +3,7 @@ const path = require('path')
 // const UglifyPlugin = require('uglifyjs-webpack-plugin')
 const TerserPlugin = require('terser-webpack-plugin') // 和 uglifyPlugin 功能差不多，vue-cli4 官方用的这个插件
 const CompressionPlugin = require('compression-webpack-plugin') // gzip 压缩
+const OptimizeCSSAssertsPlugin = require('optimize-css-assets-webpack-plugin')
 // const d = require('clean-webpack-plugin')
 
 const resolve = dir => path.join(__dirname, dir)
@@ -77,7 +78,7 @@ module.exports = {
             }
           }
         },
-        minimizer: true,
+        // minimizer: true,
         // 打包时去除打印信息（console）
         minimizer: [
           new TerserPlugin({
