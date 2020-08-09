@@ -11,6 +11,7 @@
          @click="handleActions">使用actions</div>
     <div class="demo"
          @click="handleMutations(1)">使用mutations</div>
+    <img src="file:///D:/have%20fun/%E5%9B%BE%E7%89%87%E8%B5%84%E6%BA%90/%E4%B8%8B%E8%BD%BD.png">
   </div>
 </template>
 

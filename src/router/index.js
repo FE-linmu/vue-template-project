@@ -1,11 +1,12 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import home from './home'
+import virtualList from './virtualList'
 import my from './my'
 
 Vue.use(VueRouter)
 
-const routes = [...home, ...my]
+const routes = [...home, ...my, ...virtualList]
 
 const router = new VueRouter({
   mode: 'hash',

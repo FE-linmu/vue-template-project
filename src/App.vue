@@ -1,6 +1,7 @@
 <template>
   <div id="app">
-    <div id="nav">
+    <div id="nav"
+         v-if="$route.name!=='VirtualList'">
       <router-link to="/">Home</router-link> |
       <router-link to="/myDemo1">my（测试骨架屏）</router-link>
     </div>
@@ -23,7 +24,6 @@ export default {
 
   },
   created () {
-
   },
   mounted () {
 
